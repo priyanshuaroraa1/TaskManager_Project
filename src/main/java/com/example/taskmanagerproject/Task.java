@@ -1,16 +1,21 @@
-public class Task {
+package TaskManager;
+
+import java.io.Serializable;
+import java.time.LocalDate;
+
+public class Task implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private String description;
     private LocalDate dueDate;
     private int priority;
 
-    // Constructor
     public Task(String description, LocalDate dueDate, int priority) {
         this.description = description;
         this.dueDate = dueDate;
         this.priority = priority;
     }
 
-    // Getters and Setters
     public String getDescription() {
         return description;
     }
