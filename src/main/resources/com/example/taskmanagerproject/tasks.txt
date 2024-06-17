@@ -1,0 +1,4 @@
+Implementere brukergrensesnitt,2024-06-20,3
+Skrive enhetstester,2024-06-18,2
+Optimalisere filbehandling,2024-06-25,1
+Planlegge dokumentasjon,2024-06-17,4

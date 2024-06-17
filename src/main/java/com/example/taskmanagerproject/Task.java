@@ -1,11 +1,8 @@
-package TaskManager;
+package com.example.taskmanagerproject;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Task implements Serializable {
-    private static final long serialVersionUID = 1L;
-
+public class Task implements Comparable<Task> {
     private String description;
     private LocalDate dueDate;
     private int priority;
@@ -20,24 +17,23 @@ public class Task implements Serializable {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public LocalDate getDueDate() {
         return dueDate;
-    }
-
-    public void setDueDate(LocalDate dueDate) {
-        this.dueDate = dueDate;
     }
 
     public int getPriority() {
         return priority;
     }
 
-    public void setPriority(int priority) {
-        this.priority = priority;
+    @Override
+    public int compareTo(Task other) {
+        // First compare by due date
+        int dateComparison = this.dueDate.compareTo(other.dueDate);
+        if (dateComparison != 0) {
+            return dateComparison;
+        }
+        // If due dates are equal, compare by priority
+        return Integer.compare(this.priority, other.priority);
     }
 
     @Override
